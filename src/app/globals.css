@@ -137,11 +137,6 @@ section,
         color: #FFFFFF33;
     }
 
-    .wrapper2:hover {
-        color: #2bbf6a;
-
-    }
-
     .inner {
         height: 650px;
         margin-top: 156px;
@@ -174,7 +169,6 @@ section,
         text-align: center;
         padding: 7px 12px;
         background-color: #91FA7126;
-        /* z-index: 50; */
     }
 
     .wrapper2-btn2 {

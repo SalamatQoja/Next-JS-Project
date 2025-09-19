@@ -247,7 +247,6 @@ export default function SectionRow() {
                             1024: { slidesPerView: 3 },
                         }}
                         scrollbar={{ draggable: true }}
-                        // onSwiper={(swiper: any) => console.log(swiper)}
                         onSlideChange={() => console.log('slide change')}
                     >
                         <SwiperSlide>
