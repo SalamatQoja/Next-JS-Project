@@ -155,7 +155,7 @@ export default function SectionRow() {
                             <p className="section-p reveal">Оцените, насколько легко работает система</p>
                         </aside>
                     </div>
-                    <div id="demo2" className="section-inner2 reveal">
+                    <div id="demo2" className="section-inner2">
                         <form onSubmit={handleSubmit} aria-live="polite" className="application-form" >
                             <aside className="section-auth reveal">
                                 <article className="section-auth-item">

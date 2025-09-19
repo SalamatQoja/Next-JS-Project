@@ -18,7 +18,7 @@ const Header: React.FC = () => {
                         <a href="#contact" className="wrapper2-a">Контакты</a>
                     </main>
                     <div className="header-burger-menu">
-                        <a href="#demo2" className="wrapeer2-btn reveal" role="button">Получить демо</a>
+                        <a href="#demo2" className="wrapeer2-btn " role="button">Получить демо</a>
                         <label htmlFor="nav-toggle" className="burger">
                             <section className="plate plate4 ">
                                 <svg className="burger" version="1.1" height="100" width="100" viewBox="0 0 100 100">
