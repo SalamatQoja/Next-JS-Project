@@ -1,7 +1,5 @@
 import Image from "next/image";
 import React from "react";
-// import "./destkopPage.css";
-// import "./MobilePage.css";
 
 export default function Section() {
     return (

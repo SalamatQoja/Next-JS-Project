@@ -247,7 +247,7 @@ export default function SectionRow() {
                         slidesPerView={1}
                         navigation
                         pagination={{ clickable: true }}
-                        A11y={{ enabled: true }}
+                        a11y={{ enabled: true }}
                         breakpoints={{
                             898: { slidesPerView: 2 },
                             1024: { slidesPerView: 3 },
