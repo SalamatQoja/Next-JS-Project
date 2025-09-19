@@ -18,7 +18,6 @@ type FormRequest = {
     phone_number: string;
 };
 
-
 export default function SectionRow() {
 
     const API_URL = "https://easybonus.uz/api/applications/";
@@ -33,11 +32,8 @@ export default function SectionRow() {
 
     const [loading, setLoading] = useState(false);
     const [alert, setAlert] = useState<{ type: "success" | "error"; text: string } | null>(null);
-
-
     const closeTimerRef = useRef<number | null>(null);
     const autoHideMs = 5000;
-
 
     useEffect(() => {
         return () => {
@@ -47,7 +43,6 @@ export default function SectionRow() {
             }
         };
     }, []);
-
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -132,7 +127,6 @@ export default function SectionRow() {
             setLoading(false);
         }
     };
-
 
     return (
         <>
