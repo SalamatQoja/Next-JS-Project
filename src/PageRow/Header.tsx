@@ -11,7 +11,7 @@ const Header: React.FC = () => {
                         <div className="header-logo"></div>
                         <h1 className="header-title reveal">Easy Bonus</h1>
                     </div>
-                    <main className="wrapper2 reveal">
+                    <main className="wrapper2 ">
                         <a href="#home" className="wrapper2-a">Главная</a>
                         <a href="#about" className="wrapper2-a">О Нас</a>
                         <a href="#demo" className="wrapper2-a">Демо</a>
@@ -54,8 +54,7 @@ const Header: React.FC = () => {
                                 <h1 className="hdr-into-item-title reveal">Сканируй.Рекомендуй.Зарабатывай</h1>
                                 <p className="hdr-into-item-p reveal">Мы создали приложение, которое помогает специалистам, таким как
                                     сантехники и электрики, зарабатывать больше, а магазинам — увеличивать продажи!</p>
-                                <a className="hdr-into-item-btn" href="#" role="button">Попробовать сейчас</a>
-                                {/* <a className="hdr-into-btn" href="#">Попробовать сейчас</a> */}
+                                <a className="hdr-into-item-btn" href="#demo2" role="button">Попробовать сейчас</a>
                             </div>
                             <article className="header-img reveal">
                                 <div className="header-img-row1">

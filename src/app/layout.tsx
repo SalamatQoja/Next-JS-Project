@@ -35,17 +35,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`} style={{ backgroundColor: " #0f2330" }}>
-        <div className="wrapper">
-          <ShowReklama durationMs={8000} oncePerSession={true} />
-          <RevealSimple />
-          <Header />
-          <Main />
-          <Section />
-          <SectionRow />
-          <Contact />
-          {children}
-        </div>
+        style={{ backgroundColor: " #0f2330" }}>
+        {/* <div className="wrapper"> */}
+        <ShowReklama durationMs={8000} oncePerSession={true} />
+        <RevealSimple />
+        <Header />
+        <Main />
+        <Section />
+        <SectionRow />
+        <Contact />
+        {children}
+        {/* </div> */}
       </body>
     </html>
   );
