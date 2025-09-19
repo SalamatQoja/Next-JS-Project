@@ -13,11 +13,6 @@
     }
 }
 
-
-/* .nav {
-    overflow: hidden;
-} */
-
 .swiper {
     overflow: auto;
 }
@@ -29,12 +24,10 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 
-
 .wrapper {
     overflow-x: hidden;
     background-color: #0f2330;
 }
-
 
 section,
 .page-section {
