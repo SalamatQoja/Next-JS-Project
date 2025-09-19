@@ -49,12 +49,6 @@ section,
     }
 }
 
-
-.swiper-pagination-bullet-active {
-    background: red;
-}
-
-
 @media (min-width: 970px) {
     .nav {
         display: none;
@@ -248,12 +242,8 @@ section,
         height: 500px;
         display: flex;
         flex-direction: row;
-        transition: transform 0.07s ease;
+        /* transition: transform 0.07s ease; */
         cursor: pointer;
-    }
-
-    .header-img:hover {
-        transition: transform 0.09s ease-in;
     }
 
     .header-:active {
@@ -269,7 +259,7 @@ section,
         --ty: 2px;
         --scale: 1.1;
         transform: translate(var(--tx), var(--ty)) scale(var(--scale));
-        transition: transform 1080ms cubic-bezier(.32, .19, .3, 1);
+        transition: transform 1080ms cubic-bezier(.32, .19, .23, 1);
         transform-origin: center center;
         will-change: transform;
         display: block;
@@ -307,7 +297,6 @@ section,
         transform-origin: center center;
         will-change: transform;
         display: block;
-
     }
 
     .hdr-img5:hover {
@@ -319,7 +308,6 @@ section,
         transform-origin: center bottom;
         will-change: transform;
         display: block;
-
     }
 
     .hdr-img6:hover {
@@ -331,7 +319,6 @@ section,
         transform-origin: center;
         will-change: transform;
         display: block;
-
     }
 
     .hdr-img2 {
@@ -1010,7 +997,7 @@ section,
         color: #7FFC59;
     }
 
-    .swiper-scrollbar{
+    .swiper-scrollbar {
         display: none;
     }
 
@@ -1036,7 +1023,7 @@ section,
         background-color: red;
     }
 
-    .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal > span.swiper-pagination-bullet.swiper-pagination-bullet-active{
+    .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal>span.swiper-pagination-bullet.swiper-pagination-bullet-active {
         background-color: #2bbf6a;
     }
 
@@ -1195,7 +1182,7 @@ section,
         cursor: pointer;
     }
 
-    .reklama-skip:hover{
+    .reklama-skip:hover {
         background-color: #2bbf6a;
         color: black;
     }
@@ -1326,7 +1313,7 @@ section,
         height: 20px;
     }
 
-    
+
 
     .contact-inform-p2 {
         width: 350px;
@@ -1429,6 +1416,19 @@ section,
     }
 
 
+    .reveal {
+        opacity: 0;
+        transform: translateY(110px);
+        transition: opacity 820ms cubic-bezier(.92, .19, .3, 1), transform 520ms cubic-bezier(.22, .9, .3, 1);
+        will-change: opacity, transform;
+    }
+
+    .reveal.is-visible {
+        opacity: 1;
+        transform: none;
+    }
+
+
     body {
         background-color: #0e2949;
         font-family: "Montserrat", sans-serif;
@@ -1527,9 +1527,9 @@ section,
 
     .nav {
         position: absolute;
-        top: 100px;
+        top: 80px;
         width: 100%;
-        height: 750px;
+        height: 700px;
         right: -1000%;
         background: #0f2037;
         box-shadow: -8px 0 30px rgba(0, 0, 0, 0.6);
@@ -1680,6 +1680,7 @@ section,
         transition: transform 0.07s ease;
         cursor: pointer;
         position: relative;
+        margin-top: 30px;
     }
 
     .hdr-img1 {
@@ -1762,6 +1763,7 @@ section,
         line-height: 38px;
         margin: 0 auto;
         word-break: break-word;
+        margin-top: 7px;
     }
 
     .hdr-into-item-p {
@@ -1771,7 +1773,7 @@ section,
         font-size: 17px;
         margin: 0 auto;
         text-align: center;
-        transform: translateY(-50px);
+        transform: translateY(-30px);
     }
 
     .hdr-into-item-btn {
@@ -1787,6 +1789,7 @@ section,
         border: none;
         color: #06202a;
         font-size: 17px;
+        margin-top: 30px;
     }
 
     .hdr-into-item-btn:hover {
@@ -2330,7 +2333,7 @@ section,
     }
 
     .section-name {
-        transform: translate(23px, -3px);
+        transform: translate(25px, -3px);
     }
 
     ::placeholder {
@@ -2378,7 +2381,7 @@ section,
     .section-btn:hover {
         background-color: #58d332;
     }
-    
+
     .swiper-button-prev {
         left: 16px;
         position: absolute;
@@ -2461,8 +2464,8 @@ section,
         position: relative;
     }
 
-    
-    .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal > span.swiper-pagination-bullet.swiper-pagination-bullet-active{
+
+    .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal>span.swiper-pagination-bullet.swiper-pagination-bullet-active {
         background-color: #2bbf6a;
     }
 
@@ -2734,7 +2737,6 @@ section,
         margin: 0 auto;
         font-weight: 600;
         font-size: 18px;
-        letter-spacing: 0%;
         color: #ffffff;
     }
 

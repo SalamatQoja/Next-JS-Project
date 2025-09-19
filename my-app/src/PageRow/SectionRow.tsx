@@ -164,7 +164,7 @@ export default function SectionRow() {
                         <form onSubmit={handleSubmit} aria-live="polite" className="application-form" >
                             <aside className="section-auth reveal">
                                 <article className="section-auth-item">
-                                    <label className="section-name reveal">Имя</label>
+                                    <label className="section-name ">Имя</label>
                                     <input className="section-auth-input reveal"
                                         type="text"
                                         name="first_name"
@@ -175,7 +175,7 @@ export default function SectionRow() {
                                     />
                                 </article>
                                 <article className="section-auth-item">
-                                    <label className="section-name reveal">Фамилия</label>
+                                    <label className="section-name ">Фамилия</label>
                                     <input className="section-auth-input reveal"
                                         type="text"
                                         name="last_name"
