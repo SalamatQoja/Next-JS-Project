@@ -25,23 +25,19 @@ export default function ShowReklama({
     useEffect(() => {
         if (!showImmediately) return;
 
-        // если нужно показывать только один раз за сессию
         if (oncePerSession && typeof window !== "undefined") {
             try {
                 if (sessionStorage.getItem(storageKey)) {
                     return;
                 }
             } catch (err) {
-                // ignore storage errors (privacy mode)
             }
         }
 
-        // show reklama
         setVisible(true);
         startRef.current = performance.now();
         setRemaining(durationMs);
 
-        // закрытие по таймауту
         timeoutRef.current = window.setTimeout(() => {
             hide();
             try {
@@ -49,7 +45,6 @@ export default function ShowReklama({
             } catch (err) { }
         }, durationMs);
 
-        // progress update via rAF for smoothness
         const tick = (ts: number) => {
             if (!startRef.current) startRef.current = ts;
             const elapsed = ts - (startRef.current || 0);
@@ -63,11 +58,9 @@ export default function ShowReklama({
         };
         rafRef.current = requestAnimationFrame(tick);
 
-        // блокируем прокрутку
         document.documentElement.classList.add("body-modal-open");
 
         return () => {
-            // cleanup
             if (timeoutRef.current) clearTimeout(timeoutRef.current);
             cancelAnim();
             document.documentElement.classList.remove("body-modal-open");
@@ -83,7 +76,6 @@ export default function ShowReklama({
 
     const hide = () => {
         setVisible(false);
-        // cleanup timers
         if (timeoutRef.current) {
             clearTimeout(timeoutRef.current);
             timeoutRef.current = null;

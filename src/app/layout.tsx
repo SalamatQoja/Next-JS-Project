@@ -36,7 +36,6 @@ export default function RootLayout({
     <html lang="en">
       <body
         style={{ backgroundColor: " #0f2330" }}>
-        {/* <div className="wrapper"> */}
         <ShowReklama durationMs={8000} oncePerSession={true} />
         <RevealSimple />
         <Header />
@@ -45,7 +44,6 @@ export default function RootLayout({
         <SectionRow />
         <Contact />
         {children}
-        {/* </div> */}
       </body>
     </html>
   );
