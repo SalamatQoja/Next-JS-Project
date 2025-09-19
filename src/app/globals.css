@@ -403,7 +403,6 @@ section,
         margin-left: 25px;
         font-weight: 800;
         font-size: 25px;
-
     }
 
     .inform-ellipse {
@@ -644,7 +643,7 @@ section,
         --panel: rgba(255, 255, 255, 0.04);
         --accent: #7ff07a;
         --muted: #cbd5dd;
-        --radius: 18px;
+        /* --radius: 18px; */
     }
 
     details.item[open] .item-body {
