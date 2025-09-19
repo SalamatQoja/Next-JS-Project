@@ -106,81 +106,31 @@ export default function SectionRow() {
                 body: JSON.stringify(form),
             });
 
-            // Попробуем распарсить как JSON, если заголовок отвечает
-            const contentType = res.headers.get("content-type") || "";
-            let json: unknown = null;
-
-            if (contentType.includes("application/json")) {
-                // безопасно: если JSON некорректный, поймаем в catch ниже
-                try {
-                    json = await res.json();
-                } catch {
-                    json = null;
-                }
-            } else {
-                // если сервер возвращает текст, попробуем распарсить его в JSON
-                const text = await res.text();
-                try {
-                    json = JSON.parse(text);
-                } catch {
-                    json = null;
-                }
+            const text = await res.text();
+            let json;
+            try {
+                json = JSON.parse(text);
+            } catch {
+                json = null;
             }
 
             if (!res.ok) {
-                const message =
-                    (json && (typeof json === "object" ? (json as any).error || JSON.stringify(json) : String(json))) ||
-                    `HTTP ${res.status}`;
+                const message = (json && (json.error || JSON.stringify(json))) || `HTTP ${res.status}`;
                 throw new Error(message);
             }
 
-            if ((json as any)?.success && (json as any)?.application) {
+            if (json?.success && json.application) {
                 showAlert("success", "Заявка принята. Спасибо!", true);
                 setForm({ first_name: "", last_name: "", company_name: "", email: "", phone_number: "" });
             } else {
                 throw new Error("Непредвиденный ответ сервера");
             }
-        } catch (e) {
-            // безопасная обработка неизвестного типа ошибки
+        } catch (e ) {
             const message = e instanceof Error ? e.message : String(e);
-            showAlert("error", message || "Ошибка сети", true);
+            showAlert("error",message || "Ошибка сети", true);
         } finally {
             setLoading(false);
         }
-
-
-        // try {
-        //     const res = await fetch(API_URL, {
-        //         method: "POST",
-        //         headers: { "Content-Type": "application/json" },
-        //         body: JSON.stringify(form),
-        //     });
-
-        //     const text = await res.text();
-        //     let json;
-        //     try {
-        //         json = JSON.parse(text);
-        //     } catch {
-        //         json = null;
-        //     }
-
-        //     if (!res.ok) {
-        //         const message = (json && (json.error || JSON.stringify(json))) || `HTTP ${res.status}`;
-        //         throw new Error(message);
-        //     }
-
-        //     if (json?.success && json.application) {
-        //         showAlert("success", "Заявка принята. Спасибо!", true);
-        //         setForm({ first_name: "", last_name: "", company_name: "", email: "", phone_number: "" });
-        //     } else {
-        //         throw new Error("Непредвиденный ответ сервера");
-        //     }
-        // } catch (_err ) {
-        //     showAlert("error", err?.message || "Ошибка сети", true);
-        // } finally {
-        //     setLoading(false);
-        // }
-
     };
 
 
