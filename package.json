@@ -6,8 +6,7 @@
     "dev": "next dev --turbo ",
     "build": "next build ",
     "start": "next start",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "lint:fix": "eslint --fix"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
     "@fontsource/montserrat": "^5.2.8",
