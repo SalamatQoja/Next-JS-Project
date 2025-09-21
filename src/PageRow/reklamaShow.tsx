@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
-// import Image from "next/image";
+import { handleClientScriptLoad } from "next/script";
+import React, { useEffect, useRef, useState, useTransition } from "react";
 
 type Props = {
     durationMs?: number;
@@ -21,6 +21,7 @@ export default function ShowReklama({
     const startRef = useRef<number | null>(null);
     const timeoutRef = useRef<number | null>(null);
     const rafRef = useRef<number | null>(null);
+    const [open, setOpen] = useState(false);
 
     useEffect(() => {
         if (!showImmediately) return;
@@ -74,6 +75,10 @@ export default function ShowReklama({
         }
     };
 
+    const handleClick = () => {
+        setOpen(open);
+    }
+
     const hide = () => {
         setVisible(false);
         if (timeoutRef.current) {
@@ -93,11 +98,17 @@ export default function ShowReklama({
 
     if (!visible) return null;
 
-    // const progress = Math.round(((durationMs - remaining) / durationMs) + 1000);
-
     return (
         <div className="reklama-overlay" role="dialog" aria-modal="true" aria-label="Реклама">
             <div className="reklama-card">
+                <button
+                    type="button"
+                    className="reklama-close"
+                    aria-label="Закрыть"
+                    onClick={handleClick}
+                >
+                    
+                </button>
                 <div id="demo2" className="section-inner2">
                     <form aria-live="polite" className="application-form" >
                         <div className="section-auth">
@@ -106,8 +117,7 @@ export default function ShowReklama({
                                 <input className="section-auth-input "
                                     type="text"
                                     name="first_name"
-                                    // onChange={handleChange}
-                                    // value={form.first_name}
+
                                     placeholder="Введите имя"
                                     required
                                 />
@@ -117,8 +127,7 @@ export default function ShowReklama({
                                 <input className="section-auth-input"
                                     type="text"
                                     name="last_name"
-                                    // value={form.last_name}
-                                    // onChange={handleChange}
+
                                     placeholder="Введите фамилия"
                                     required
                                 />
@@ -130,8 +139,6 @@ export default function ShowReklama({
                             <input className="section-input "
                                 type="text"
                                 name="company_name"
-                                // value={form.company_name}
-                                // onChange={handleChange}
                                 placeholder="Названия компания"
                                 required
                             />
@@ -139,8 +146,7 @@ export default function ShowReklama({
                             <input className="section-input"
                                 type="text"
                                 name="email"
-                                // value={form.email}
-                                // onChange={handleChange}
+
                                 placeholder="Введите почту"
                                 required
                             />
@@ -148,8 +154,7 @@ export default function ShowReklama({
                             <input className="section-input"
                                 type="text"
                                 name="phone_number"
-                                // value={form.phone_number}
-                                // onChange={handleChange}
+
                                 placeholder="+998 -xxx- -xxx-"
                                 required
                             />
