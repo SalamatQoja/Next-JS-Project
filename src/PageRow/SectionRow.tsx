@@ -294,7 +294,7 @@ export default function SectionRow() {
                         scrollbar={{ draggable: true }}
                         onSlideChange={() => console.log('slide change')}
                     >
-                        <SwiperSlide>
+                        <SwiperSlide style={{width: "366px"}}>
                             <p className="main-slider-p reveal">Теперь я не просто советую клиентам хорошие товары, но и получаю за это
                                 бонусы.
                                 Удобно, честно и выгодно — отличная мотивация!</p>
@@ -306,7 +306,7 @@ export default function SectionRow() {
                                 </div>
                             </section>
                         </SwiperSlide>
-                        <SwiperSlide>
+                        <SwiperSlide style={{width: "366px"}}>
                             <p className="main-slider-p reveal">С EASY BONUS мы увеличили продажи на 18% за первый месяц. Система проста в
                                 использовании, а мастера стали чаще возвращаться именно к нам.</p>
                             <article className="main-slider-human">
@@ -317,7 +317,7 @@ export default function SectionRow() {
                                 </div>
                             </article>
                         </SwiperSlide>
-                        <SwiperSlide>
+                        <SwiperSlide style={{width: "367px"}}>
                             <p className="main-slider-p reveal">Раньше просто рекомендовала товары — теперь это приносит доход. Приложение
                                 простое, всё наглядно. Рекомендую коллегам!</p>
                             <div className="main-slider-human">
@@ -328,7 +328,7 @@ export default function SectionRow() {
                                 </div>
                             </div>
                         </SwiperSlide>
-                        <SwiperSlide>
+                        <SwiperSlide style={{width: "367px"}}>
                             <p className="main-slider-p reveal">Теперь я не просто советую клиентам хорошие товары, но и получаю за это
                                 бонусы.
                                 Удобно, честно и выгодно — отличная мотивация!</p>
@@ -340,7 +340,7 @@ export default function SectionRow() {
                                 </div>
                             </section>
                         </SwiperSlide>
-                        <SwiperSlide>
+                        <SwiperSlide style={{width: "364px"}}>
                             <p className="main-slider-p reveal">С EASY BONUS мы увеличили продажи на 18% за первый месяц. Система проста в
                                 использовании, а мастера стали чаще возвращаться именно к нам.</p>
                             <article className="main-slider-human">
@@ -351,7 +351,7 @@ export default function SectionRow() {
                                 </div>
                             </article>
                         </SwiperSlide>
-                        <SwiperSlide>
+                        <SwiperSlide style={{width: "363px"}}>
                             <p className="main-slider-p reveal">Раньше просто рекомендовала товары — теперь это приносит доход. Приложение
                                 простое, всё наглядно. Рекомендую коллегам!</p>
                             <div className="main-slider-human">

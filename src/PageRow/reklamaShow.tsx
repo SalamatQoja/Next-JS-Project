@@ -11,7 +11,7 @@ type Props = {
 };
 
 export default function ShowReklama({
-    durationMs = 2000,
+    durationMs = 5000,
     oncePerSession = true,
     storageKey = "reklamaShown",
     showImmediately = true,
