@@ -1,17 +1,17 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+// import Image from "next/image";
 
 type Props = {
-    durationMs?: number;         
-    oncePerSession?: boolean;   
-    storageKey?: string;        
-    showImmediately?: boolean;   
+    durationMs?: number;
+    oncePerSession?: boolean;
+    storageKey?: string;
+    showImmediately?: boolean;
 };
 
 export default function ShowReklama({
-    durationMs = 10000,
+    durationMs = 2000,
     oncePerSession = true,
     storageKey = "reklamaShown",
     showImmediately = true,
@@ -87,38 +87,75 @@ export default function ShowReklama({
         } catch (err) { }
     };
 
-    const handleSkip = () => {
-        hide();
-    };
+    // const handleSkip = () => {
+    //     hide();
+    // };
 
     if (!visible) return null;
 
-    const progress = Math.round(((durationMs - remaining) / durationMs) * 100);
+    // const progress = Math.round(((durationMs - remaining) / durationMs) + 1000);
 
     return (
         <div className="reklama-overlay" role="dialog" aria-modal="true" aria-label="Реклама">
-            <div className="reklama-card"> 
-                <div className="reklama-media">
-                    <Image src="/softuim.png" alt="Реклама" width={760} height={300} style={{ objectFit: "cover", width: "100%", height: "100%" }} />
-                </div>
-
-                <div className="reklama-info">
-                    <div className="reklama-top">
-                        <div className="reklama-title">Специальное предложение</div>
-                        <button aria-label="Пропустить рекламу" className="reklama-skip" onClick={handleSkip}>
-                            Пропустить
-                        </button>
-                    </div>
-
-                    <div className="reklama-text">Мы готовымся — узнайте больше!</div>
-                    <p className="reklama-text">Звоните телефон номер: +998975000501</p>
-
-                    <div className="reklama-bottom">
-                        <div className="reklama-progress" aria-hidden>
-                            <div className="reklama-progress-bar" style={{ width: `${progress}%` }} />
+            <div className="reklama-card">
+                <div id="demo2" className="section-inner2">
+                    <form aria-live="polite" className="application-form" >
+                        <div className="section-auth">
+                            <article className="section-auth-item">
+                                <label className="section-name2 ">Имя</label>
+                                <input className="section-auth-input "
+                                    type="text"
+                                    name="first_name"
+                                    // onChange={handleChange}
+                                    // value={form.first_name}
+                                    placeholder="Введите имя"
+                                    required
+                                />
+                            </article>
+                            <article className="section-auth-item">
+                                <label className="section-name2 ">Фамилия</label>
+                                <input className="section-auth-input"
+                                    type="text"
+                                    name="last_name"
+                                    // value={form.last_name}
+                                    // onChange={handleChange}
+                                    placeholder="Введите фамилия"
+                                    required
+                                />
+                            </article>
                         </div>
-                        <div className="reklama-remaining">{Math.ceil(remaining / 1000)} с</div>
-                    </div>
+
+                        <footer className="section-input3">
+                            <label className="section-name3">Названия компания</label>
+                            <input className="section-input "
+                                type="text"
+                                name="company_name"
+                                // value={form.company_name}
+                                // onChange={handleChange}
+                                placeholder="Названия компания"
+                                required
+                            />
+                            <label className="section-name3">E-mail</label>
+                            <input className="section-input"
+                                type="text"
+                                name="email"
+                                // value={form.email}
+                                // onChange={handleChange}
+                                placeholder="Введите почту"
+                                required
+                            />
+                            <label className="section-name3">Номер телефона</label>
+                            <input className="section-input"
+                                type="text"
+                                name="phone_number"
+                                // value={form.phone_number}
+                                // onChange={handleChange}
+                                placeholder="+998 -xxx- -xxx-"
+                                required
+                            />
+                            <button type="submit" className="section-btn">Получить заявку</button>
+                        </footer>
+                    </form>
                 </div>
             </div>
         </div>

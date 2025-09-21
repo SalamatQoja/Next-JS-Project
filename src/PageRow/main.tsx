@@ -17,7 +17,7 @@ function Main() {
                                 эффективные
                                 цифровые
                                 решения для реального бизнеса.</h2>
-                                <span className="inform1-ellipse"></span>
+                            <span className="inform1-ellipse"></span>
                         </aside>
                         <section className="inform2 reveal">
                             <article className="inform2-title-show reveal">
@@ -38,9 +38,11 @@ function Main() {
                                 инструмент, который:</p>
                             <div className="inform3-ellipse reveal"></div>
                         </div>
-                        <p className="inform3-p2 reveal">- Автоматизирует учёт рекомендаций товаров;</p>
-                        <p className="inform3-p2 reeval">- Позволяет быстро сканировать и отслеживать бонусы;</p>
-                        <p className="inform3-p2 reveal">- Делает процесс прозрачным и выгодным для всех участников.</p>
+                        <div className="inform3-row">
+                            <p className="inform3-p2 reveal">- Автоматизирует учёт рекомендаций товаров;</p>
+                            <p className="inform3-p2 ">- Позволяет быстро сканировать и отслеживать бонусы;</p>
+                            <p className="inform3-p2 reveal">- Делает процесс прозрачным и выгодным для всех участников.</p>
+                        </div>
                     </footer>
                     <div className="main-bottom-line reveal"></div>
                 </div>

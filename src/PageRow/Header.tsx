@@ -54,7 +54,7 @@ const Header: React.FC = () => {
                                 <h1 className="hdr-into-item-title reveal">Сканируй.Рекомендуй.Зарабатывай</h1>
                                 <p className="hdr-into-item-p reveal">Мы создали приложение, которое помогает специалистам, таким как
                                     сантехники и электрики, зарабатывать больше, а магазинам — увеличивать продажи!</p>
-                                <a className="hdr-into-item-btn" href="#demo2" role="button">Попробовать сейчас</a>
+                                <a href="#" className="hdr-into-item-btn"  role="button">Попробовать сейчас</a>
                             </div>
                             <article className="header-img reveal">
                                 <div className="header-img-row1">

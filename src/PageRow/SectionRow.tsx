@@ -33,7 +33,7 @@ export default function SectionRow() {
     const [loading, setLoading] = useState(false);
     const [alert, setAlert] = useState<{ type: "success" | "error"; text: string } | null>(null);
     const closeTimerRef = useRef<number | null>(null);
-    const autoHideMs = 5000;
+    const autoHideMs = 4000;
 
     useEffect(() => {
         return () => {
@@ -43,20 +43,6 @@ export default function SectionRow() {
             }
         };
     }, []);
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = e.target;
-        setForm((prev) => ({ ...prev, [name]: value } as FormRequest));
-    };
-
-    const validate = (data: FormRequest) => {
-        if (!data.first_name.trim()) return "Введите имя";
-        if (!data.last_name.trim()) return "Введите фамилию";
-        if (!data.company_name.trim()) return "Введите название компании";
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) return "Некорректный email";
-        if (!/^\d{7,15}$/.test(data.phone_number.replace(/\D/g, ""))) return "Телефон должен содержать от 7 до 15 цифр";
-        return null;
-    };
 
 
     const showAlert = (type: "success" | "error", text: string, autoHide = true) => {
@@ -83,6 +69,56 @@ export default function SectionRow() {
         setAlert(null);
     };
 
+    const validate = (data: FormRequest) => {
+        if (!data.first_name.trim()) return "Введите имя";
+        if (!data.last_name.trim()) return "Введите фамилию";
+        if (!data.company_name.trim()) return "Введите название компании";
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) return "Некорректный email";
+        const digits = data.phone_number.replace(/\D/g, "");
+        if (!/^\d{9}$/.test(digits)) return "Телефон должен содержать от 7 до 15 цифр";
+        return null;
+    };
+
+
+    const formatUZ = (digits: string) => {
+        const a = digits.slice(0, 3);
+        const b = digits.slice(3, 6);
+        const c = digits.slice(6, 9);
+        let out = "+998";
+        if (a) out += " " + a;
+        if (b) out += "-" + b;
+        if (c) out += "-" + c;
+        return out;
+    };
+
+
+    const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const raw = e.target.value;
+        let digits = raw.replace(/\D/g, "");
+
+        if (digits.startsWith("998")) digits = digits.slice(3);
+
+        if (digits.startsWith("0")) digits = digits.replace(/^0+/, "");
+
+        digits = digits.slice(0, 9);
+        setForm((prev) => ({ ...prev, phone_number: digits }));
+    };
+
+    const handlePhonePaste = (e: React.ClipboardEvent<HTMLInputElement>) => {
+        const pasted = e.clipboardData.getData("text") || "";
+        let digits = pasted.replace(/\D/g, "");
+        if (digits.startsWith("998")) digits = digits.slice(3);
+        digits = digits.replace(/^0+/, "").slice(0, 9);
+        e.preventDefault();
+        setForm((prev) => ({ ...prev, phone_number: digits }));
+    };
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setForm((prev) => ({ ...prev, [name]: value } as FormRequest));
+    };
+
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
@@ -100,6 +136,7 @@ export default function SectionRow() {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(form),
             });
+            console.log("inform", res);
 
             const text = await res.text();
             let json;
@@ -108,6 +145,7 @@ export default function SectionRow() {
             } catch {
                 json = null;
             }
+            console.log("inform2", text);
 
             if (!res.ok) {
                 const message = (json && (json.error || JSON.stringify(json))) || `HTTP ${res.status}`;
@@ -120,13 +158,16 @@ export default function SectionRow() {
             } else {
                 throw new Error("Непредвиденный ответ сервера");
             }
-        } catch (e ) {
+        } catch (e) {
             const message = e instanceof Error ? e.message : String(e);
-            showAlert("error",message || "Ошибка сети", true);
+            console.log("error", e);
+            showAlert("error", message || "Ошибка сети", true);
         } finally {
             setLoading(false);
         }
     };
+
+    const displayValue = form.phone_number ? formatUZ(form.phone_number) : "";
 
     return (
         <>
@@ -138,7 +179,7 @@ export default function SectionRow() {
                             оплаты.</h1>
                         <section className="section-item">
                             <div className="section-img-size">
-                                <Image src="/Distribute Vertical.png" alt="picture" className="section-img reveal" width={80} height={80} />
+                                <Image src="/Distribute Vertical.png" alt="picture" className="section-img " width={60} height={80} />
                             </div>
                             <p className="section-p reveal">Сканируйте тестовый штрих-код</p>
                         </section>
@@ -156,7 +197,7 @@ export default function SectionRow() {
                         </aside>
                     </div>
                     <div id="demo2" className="section-inner2">
-                        <form onSubmit={handleSubmit} aria-live="polite" className="application-form" >
+                        <form onSubmit={handleSubmit} aria-live="polite" className="application-form"noValidate >
                             <aside className="section-auth reveal">
                                 <article className="section-auth-item">
                                     <label className="section-name ">Имя</label>
@@ -202,12 +243,16 @@ export default function SectionRow() {
                                 />
                                 <label>Номер телефона</label>
                                 <input className="section-input"
-                                    type="text"
+                                    type="tel"
                                     name="phone_number"
-                                    value={form.phone_number}
-                                    onChange={handleChange}
+                                    inputMode="numeric"
+                                    pattern="[0-9]*"
+                                    value={displayValue}
+                                    onChange={handlePhoneChange}
+                                    onPaste={handlePhonePaste}
                                     placeholder="+998 -xxx- -xxx-"
                                     required
+                                    autoComplete="tel"
                                 />
                                 <button type="submit"
                                     className="section-btn "
@@ -223,7 +268,7 @@ export default function SectionRow() {
                                         <div className="ui-row">
                                             <div className="ui-text">{alert.text}</div>
                                             <button className="ui-close" onClick={hideAlert} aria-label="Закрыть уведомление">
-                                                ×
+
                                             </button>
                                         </div>
                                     </div>
