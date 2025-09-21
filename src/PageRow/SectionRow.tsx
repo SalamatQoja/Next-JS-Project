@@ -294,7 +294,7 @@ export default function SectionRow() {
                         scrollbar={{ draggable: true }}
                         onSlideChange={() => console.log('slide change')}
                     >
-                        <SwiperSlide style={{width: "364.669px"}}>
+                        <SwiperSlide style={{width: "366.669px"}}>
                             <p className="main-slider-p reveal">Теперь я не просто советую клиентам хорошие товары, но и получаю за это
                                 бонусы.
                                 Удобно, честно и выгодно — отличная мотивация!</p>
@@ -306,7 +306,7 @@ export default function SectionRow() {
                                 </div>
                             </section>
                         </SwiperSlide>
-                        <SwiperSlide style={{width: "364.669px"}}>
+                        <SwiperSlide style={{width: "366.669px"}}>
                             <p className="main-slider-p reveal">С EASY BONUS мы увеличили продажи на 18% за первый месяц. Система проста в
                                 использовании, а мастера стали чаще возвращаться именно к нам.</p>
                             <article className="main-slider-human">
@@ -317,7 +317,7 @@ export default function SectionRow() {
                                 </div>
                             </article>
                         </SwiperSlide>
-                        <SwiperSlide style={{width: "363.668px"}}>
+                        <SwiperSlide style={{width: "367.668px"}}>
                             <p className="main-slider-p reveal">Раньше просто рекомендовала товары — теперь это приносит доход. Приложение
                                 простое, всё наглядно. Рекомендую коллегам!</p>
                             <div className="main-slider-human">
@@ -328,7 +328,7 @@ export default function SectionRow() {
                                 </div>
                             </div>
                         </SwiperSlide>
-                        <SwiperSlide style={{width: "367.669px"}}>
+                        <SwiperSlide style={{width: "366.669px"}}>
                             <p className="main-slider-p reveal">Теперь я не просто советую клиентам хорошие товары, но и получаю за это
                                 бонусы.
                                 Удобно, честно и выгодно — отличная мотивация!</p>
@@ -340,7 +340,7 @@ export default function SectionRow() {
                                 </div>
                             </section>
                         </SwiperSlide>
-                        <SwiperSlide style={{width: "370.668px"}}>
+                        <SwiperSlide style={{width: "368.668px"}}>
                             <p className="main-slider-p reveal">С EASY BONUS мы увеличили продажи на 18% за первый месяц. Система проста в
                                 использовании, а мастера стали чаще возвращаться именно к нам.</p>
                             <article className="main-slider-human">
@@ -350,17 +350,6 @@ export default function SectionRow() {
                                     <p className="main-slider-p3 reveal">Магазин</p>
                                 </div>
                             </article>
-                        </SwiperSlide>
-                        <SwiperSlide style={{width: "370.668px"}}>
-                            <p className="main-slider-p reveal">Раньше просто рекомендовала товары — теперь это приносит доход. Приложение
-                                простое, всё наглядно. Рекомендую коллегам!</p>
-                            <div className="main-slider-human">
-                                <Image src="/image 5.png" alt="picture" className="main-slider-img" width={80} height={80} />
-                                <div className="section-slider-name">
-                                    <p className="main-slider-p2 reveal">Наталья Сараева</p>
-                                    <p className="main-slider-p3 reveal">Сантехник</p>
-                                </div>
-                            </div>
                         </SwiperSlide>
                     </Swiper>
                 </div>
