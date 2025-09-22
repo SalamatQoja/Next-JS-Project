@@ -40,9 +40,9 @@ const Header: React.FC = () => {
                     <ul>
                         <li><a href="#home">Главная</a></li>
                         <li><a href="#about">О нас</a></li>
-                        <li><a href="#contacts">Контакты</a></li>
+                        <li><a href="#contact">Контакты</a></li>
                         <li><a href="#features">Функционал</a></li>
-                        <li><a href="#benifist">Преимущества проет</a></li>
+                        <li><a href="#benifist">Преимущества проект</a></li>
                         <li><a href="#customer">Отзывы клиентов</a></li>
                         <li><a href="#demo">Демо</a></li>
                     </ul>
@@ -52,9 +52,15 @@ const Header: React.FC = () => {
                         <div className="hdr-item">
                             <div className="hdr-into-item ">
                                 <h1 className="hdr-into-item-title reveal">Сканируй.Рекомендуй.Зарабатывай</h1>
+                                <div className="hdr-title-row reveal">
+                                    <p className="hdr-title-show1">Сканируй.</p>
+                                    <p className="hdr-title-show1">Рекомендуй.</p>
+                                    <p className="hdr-title-show1">Зарабатывай.</p>
+        
+                                </div>
                                 <p className="hdr-into-item-p reveal">Мы создали приложение, которое помогает специалистам, таким как
                                     сантехники и электрики, зарабатывать больше, а магазинам — увеличивать продажи!</p>
-                                <a href="#" className="hdr-into-item-btn"  role="button">Попробовать сейчас</a>
+                                <a href="#demo2" className="hdr-into-item-btn"  role="button">Попробовать сейчас</a>
                             </div>
                             <article className="header-img reveal">
                                 <div className="header-img-row1">

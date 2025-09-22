@@ -284,7 +284,7 @@ export default function SectionRow() {
                     </div>
                 </div>
             </section >
-            <section className="main-slider">
+            <section id="customer" className="main-slider">
                 <h1 className="main-slider-title reveal">Что говорят <span> о нас?</span></h1>
                 <div className="swiper mySwiper reveal">
                     <Swiper

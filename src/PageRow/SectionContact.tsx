@@ -19,7 +19,7 @@ export default function Contact() {
                                 <p className="contact-inform-p2">Телефон: +998 97 500 05 01 </p>
                             </aside>
                             <address className="contact-inform-call">
-                                <Image className="sayt-img" src="/sayt.png" alt="picture"width={32}height={32} />
+                                <Image className="sayt-img" src="/Distribute Vertical.png" alt="picture"width={30}height={32} />
                                 <p className="contact-inform-p2">Наш сайт: www.softuim.uz </p>
                             </address>
                         </section>

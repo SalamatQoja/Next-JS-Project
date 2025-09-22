@@ -47,7 +47,7 @@ function Main() {
                     <div className="main-bottom-line reveal"></div>
                 </div>
             </main>
-            <main className="main-center">
+            <main id="features" className="main-center">
                 <h1 className="section-title reveal">Что умеет <span>наше приложение?</span></h1>
                 <section className="main-center-container reveal">
                     <div className="accordion reveal">
