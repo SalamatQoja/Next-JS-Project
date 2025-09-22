@@ -44,7 +44,6 @@ export default function SectionRow() {
         };
     }, []);
 
-
     const showAlert = (type: "success" | "error", text: string, autoHide = true) => {
         if (closeTimerRef.current) {
             clearTimeout(closeTimerRef.current);
@@ -97,7 +96,6 @@ export default function SectionRow() {
         return out;
     };
 
-
     const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const raw = e.target.value;
         let digits = raw.replace(/\D/g, "");
@@ -123,7 +121,6 @@ export default function SectionRow() {
         const { name, value } = e.target;
         setForm((prev) => ({ ...prev, [name]: value } as FormRequest));
     };
-
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
