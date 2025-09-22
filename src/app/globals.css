@@ -650,7 +650,6 @@ section,
         --panel: rgba(255, 255, 255, 0.04);
         --accent: #7ff07a;
         --muted: #cbd5dd;
-        /* --radius: 18px; */
     }
 
     details.item[open] .item-body {
@@ -746,7 +745,6 @@ section,
         font-weight: 800;
         font-size: 35px;
         text-align: center;
-
     }
 
     .section-title2 {
@@ -1264,8 +1262,6 @@ section,
         height: 20px;
     }
 
-
-
     .contact-inform-p2 {
         width: 350px;
         height: 20px;
@@ -1359,7 +1355,6 @@ section,
         margin-top: 3px;
     }
 }
-
 
 @media (max-width: 960px) {
 
