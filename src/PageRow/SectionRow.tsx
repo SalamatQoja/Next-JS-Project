@@ -79,15 +79,21 @@ export default function SectionRow() {
         return null;
     };
 
-
     const formatUZ = (digits: string) => {
-        const a = digits.slice(0, 3);
-        const b = digits.slice(3, 6);
-        const c = digits.slice(6, 9);
+        const d = (digits || "").replace(/\D/g, "").slice(0, 9);
+
+        if (!d) return "";
+        const op = d.slice(0, 2);
+        const partA = d.slice(2, 5);
+        const partB = d.slice(5, 7);
+        const partC = d.slice(7, 9);
+
         let out = "+998";
-        if (a) out += " " + a;
-        if (b) out += "-" + b;
-        if (c) out += "-" + c;
+        if (op) out += `(${op})`;
+        if (partA) out += ` ${partA}`;
+        if (partB) out += `-${partB}`;
+        if (partC) out += `-${partC}`;
+
         return out;
     };
 
@@ -197,7 +203,7 @@ export default function SectionRow() {
                         </aside>
                     </div>
                     <div id="demo2" className="section-inner2">
-                        <form onSubmit={handleSubmit} aria-live="polite" className="application-form"noValidate >
+                        <form onSubmit={handleSubmit} aria-live="polite" className="application-form" noValidate >
                             <aside className="section-auth reveal">
                                 <article className="section-auth-item">
                                     <label className="section-name ">Имя</label>
@@ -250,7 +256,7 @@ export default function SectionRow() {
                                     value={displayValue}
                                     onChange={handlePhoneChange}
                                     onPaste={handlePhonePaste}
-                                    placeholder="+998 -xxx- -xxx-"
+                                    placeholder="+998( )__-__-__"
                                     required
                                     autoComplete="tel"
                                 />

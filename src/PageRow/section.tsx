@@ -7,7 +7,7 @@ export default function Section() {
             <h1 className="main-bottom-title reveal">Как это помогает <span> бизнесу?</span></h1>
             <div className="main-bottom-container reveal">
                 <header className="main-bottom-inner reveal">
-                    <Image className="main-bottom-img" src="/bag-dynamic-clay.png" alt="picture" width={120} height={125} priority/>
+                    <Image className="main-bottom-img" src="/bag-dynamic-clay.png" alt="picture" width={110} height={125} priority/>
                     <p className="main-bottom-p">Увеличение продаж через рекомендации</p>
                 </header>
                 <main className="main-bottom-inner reveal">
