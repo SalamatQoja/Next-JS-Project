@@ -1146,8 +1146,8 @@ section,
 
     .reklama-close {
         position: fixed;
-        font-size: 50px;
-        transform: translate(437px, -13px);
+        font-size: 46px;
+        transform: translate(437px, -11px);
 
         color: #ffffff;
     }
@@ -1385,6 +1385,30 @@ section,
         border-radius: 26px;
         background-color: #2d333f;
     }
+
+    .reklama-close{
+        transform: translate(142px,-7px);
+        font-size: 37.2px;
+        height: 40px;   
+    }
+
+    .section-btn2{
+        width: 90%;
+        height: 33px;
+        margin: 0 auto;
+        background-color: #54cc2c;
+        border-radius: 14px;
+        margin-top: 13.5px;
+        color: #06202a;
+        font-weight: 600;
+        padding-bottom: 1px;
+    }
+
+    .section-btn2:hover{
+        background-color: rgb(136, 199, 42);
+    }
+
+   
 
     .section-name2 {
         transform: translateX(20px);
