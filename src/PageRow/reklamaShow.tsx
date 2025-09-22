@@ -164,8 +164,6 @@ export default function ShowReklama({
         return out;
     };
 
-
-
     const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const raw = e.target.value;
         let digits = raw.replace(/\D/g, "");
@@ -191,7 +189,6 @@ export default function ShowReklama({
         const { name, value } = e.target;
         setForm((prev) => ({ ...prev, [name]: value } as FormRequest));
     };
-
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -266,7 +263,6 @@ export default function ShowReklama({
                 >
                     ×
                 </button>
-
                 <div id="demo2" className="section-inner2">
                     <form
                         aria-live="polite"
@@ -291,7 +287,6 @@ export default function ShowReklama({
                                     required
                                 />
                             </article>
-
                             <article className="section-auth-item" style={{ flex: "1 1 200px", display: "flex", flexDirection: "column", gap: 6 }}>
                                 <label className="section-name2">Фамилия</label>
                                 <input className="section-auth-input "
@@ -341,7 +336,6 @@ export default function ShowReklama({
                             <button type="submit" className="section-btn2"
                                 disabled={loading}> {loading ? "Отправка..." : "Отправить заявку"}
                             </button>
-
                             {alert && (
                                 <div
                                     className={`user-inform-modal ${alert.type === "success" ? "ok" : "err"}`}

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
 
-
 const Header: React.FC = () => {
     return (
         <header>
@@ -56,7 +55,6 @@ const Header: React.FC = () => {
                                     <p className="hdr-title-show1">Сканируй.</p>
                                     <p className="hdr-title-show1">Рекомендуй.</p>
                                     <p className="hdr-title-show1">Зарабатывай.</p>
-        
                                 </div>
                                 <p className="hdr-into-item-p reveal">Мы создали приложение, которое помогает специалистам, таким как
                                     сантехники и электрики, зарабатывать больше, а магазинам — увеличивать продажи!</p>

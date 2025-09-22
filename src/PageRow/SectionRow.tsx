@@ -19,9 +19,8 @@ type FormRequest = {
 };
 
 export default function SectionRow() {
-
     const API_URL = "https://easybonus.uz/api/applications/";
-
+    
     const [form, setForm] = useState<FormRequest>({
         first_name: "",
         last_name: "",
