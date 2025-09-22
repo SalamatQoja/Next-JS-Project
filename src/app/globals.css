@@ -1378,7 +1378,7 @@ section,
 
     .reklama-card {
         width: 80%;
-        max-height: 420px;
+        max-height: 438px;
         box-shadow: 0 20px 60px rgba(2, 8, 23, 0.5);
         display: grid;
         overflow: hidden;
@@ -1387,14 +1387,13 @@ section,
     }
 
     .reklama-close{
-        transform: translate(142px,-7px);
-        font-size: 37.2px;
-        height: 40px;   
+        transform: translate(142px,-4px);
+        font-size: 37.2px; 
     }
 
     .section-btn2{
         width: 90%;
-        height: 33px;
+        height: 30px;
         margin: 0 auto;
         background-color: #54cc2c;
         border-radius: 14px;
